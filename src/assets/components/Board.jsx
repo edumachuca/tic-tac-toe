@@ -1,0 +1,68 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { SimpleGrid } from '@chakra-ui/react';
+import { Center } from '@chakra-ui/react';
+import { calculateWinner } from './calculateWinner';
+
+export function Board({ xIsNext, squares, onPlay }) {
+	function handleClick(i) {
+		if (squares[i] || calculateWinner(squares)) {
+			return;
+		}
+		const nextSquares = squares.slice();
+		if (xIsNext) {
+			nextSquares[i] = 'X';
+		} else {
+			nextSquares[i] = 'O';
+		}
+
+		onPlay(nextSquares);
+	}
+
+	const winner = calculateWinner(squares);
+	let status;
+	if (winner) {
+		status = 'Ganador: ' + winner;
+	} else {
+		status = 'Siguiente jugador: ' + (xIsNext ? 'X' : 'O');
+	}
+	return (
+		<div>
+			<div>{status}</div>
+			<SimpleGrid columns={3} width="245px" spacing={1}>
+				<Center onClick={() => handleClick(0)} bg="tomato" width="80px" height="80px" cursor="pointer">
+					{squares[0]}
+				</Center>
+				<Center onClick={() => handleClick(1)} bg="tomato" width="80px" height="80px" cursor="pointer">
+					{squares[1]}
+				</Center>
+				<Center onClick={() => handleClick(2)} bg="tomato" width="80px" height="80px" cursor="pointer">
+					{squares[2]}
+				</Center>
+				<Center onClick={() => handleClick(3)} bg="tomato" width="80px" height="80px" cursor="pointer">
+					{squares[3]}
+				</Center>
+				<Center onClick={() => handleClick(4)} bg="tomato" width="80px" height="80px" cursor="pointer">
+					{squares[4]}
+				</Center>
+				<Center onClick={() => handleClick(5)} bg="tomato" width="80px" height="80px" cursor="pointer">
+					{squares[5]}
+				</Center>
+				<Center onClick={() => handleClick(6)} bg="tomato" width="80px" height="80px" cursor="pointer">
+					{squares[6]}
+				</Center>
+				<Center onClick={() => handleClick(7)} bg="tomato" width="80px" height="80px" cursor="pointer">
+					{squares[7]}
+				</Center>
+				<Center onClick={() => handleClick(8)} bg="tomato" width="80px" height="80px" cursor="pointer">
+					{squares[8]}
+				</Center>
+			</SimpleGrid>
+		</div>
+	);
+}
+Board.propTypes = {
+	xIsNext: PropTypes.bool,
+	squares: PropTypes.array,
+	onPlay: PropTypes.func
+};
