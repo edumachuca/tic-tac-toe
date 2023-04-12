@@ -1,6 +1,7 @@
+import { Box, Flex, List } from '@chakra-ui/react';
 import React from 'react';
 import { useState } from 'react';
-import { Board } from './assets/components/Board';
+import { Board } from './components/Board';
 
 export default function Game() {
 	const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -26,20 +27,22 @@ export default function Game() {
 			description = 'Ir al inicio del juego';
 		}
 		return (
-			<li key={move}>
-				<button onClick={() => jumpTo(move)}>{description}</button>
-			</li>
+			<List key={move}>
+				<Box  color="blue" w="25vh" cursor="pointer" onClick={() => jumpTo(move)}>
+					{description}
+				</Box>
+			</List>
 		);
 	});
 
 	return (
-		<div>
-			<div>
+		<Flex backgroundColor="lightblue">
+			<Flex>
 				<Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
-			</div>
-			<div>
-				<ol>{moves}</ol>
-			</div>
-		</div>
+			</Flex>
+			<Flex>
+				<List>{moves}</List>
+			</Flex>
+		</Flex>
 	);
 }

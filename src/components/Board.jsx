@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SimpleGrid } from '@chakra-ui/react';
+import { Flex, SimpleGrid } from '@chakra-ui/react';
 import { Center } from '@chakra-ui/react';
-import { calculateWinner } from './calculateWinner';
+import { calculateWinner } from '../utils/calculateWinner';
 
 export function Board({ xIsNext, squares, onPlay }) {
 	function handleClick(i) {
@@ -27,9 +27,11 @@ export function Board({ xIsNext, squares, onPlay }) {
 		status = 'Siguiente jugador: ' + (xIsNext ? 'X' : 'O');
 	}
 	return (
-		<div>
-			<div>{status}</div>
-			<SimpleGrid columns={3} width="245px" spacing={1}>
+		<Flex justifyContent="center" alignItems="center">
+			<Flex justifyContent="center" alignItems="center" w="20vh" h="10vh">
+				{status}
+			</Flex>
+			<SimpleGrid  columns={3} width="245px" spacing={1}>
 				<Center onClick={() => handleClick(0)} bg="tomato" width="80px" height="80px" cursor="pointer">
 					{squares[0]}
 				</Center>
@@ -58,7 +60,7 @@ export function Board({ xIsNext, squares, onPlay }) {
 					{squares[8]}
 				</Center>
 			</SimpleGrid>
-		</div>
+		</Flex>
 	);
 }
 Board.propTypes = {
