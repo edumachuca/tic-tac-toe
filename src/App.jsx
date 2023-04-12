@@ -28,7 +28,7 @@ export default function Game() {
 		}
 		return (
 			<List key={move}>
-				<Box  color="blue" w="25vh" cursor="pointer" onClick={() => jumpTo(move)}>
+				<Box color="blue" w="25vh" cursor="pointer" onClick={() => jumpTo(move)}>
 					{description}
 				</Box>
 			</List>

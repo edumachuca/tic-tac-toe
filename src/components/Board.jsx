@@ -31,7 +31,7 @@ export function Board({ xIsNext, squares, onPlay }) {
 			<Flex justifyContent="center" alignItems="center" w="20vh" h="10vh">
 				{status}
 			</Flex>
-			<SimpleGrid  columns={3} width="245px" spacing={1}>
+			<SimpleGrid columns={3} width="245px" spacing={1}>
 				<Center onClick={() => handleClick(0)} bg="tomato" width="80px" height="80px" cursor="pointer">
 					{squares[0]}
 				</Center>
