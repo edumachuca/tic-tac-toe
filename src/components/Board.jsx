@@ -22,9 +22,9 @@ export function Board({ xIsNext, squares, onPlay }) {
 	const winner = calculateWinner(squares);
 	let status;
 	if (winner) {
-		status = 'Ganador: ' + winner;
+		status = 'Winner: ' + winner;
 	} else {
-		status = 'Siguiente jugador: ' + (xIsNext ? 'X' : 'O');
+		status = 'Next player: ' + (xIsNext ? 'X' : 'O');
 	}
 	return (
 		<Flex justifyContent="center" alignItems="center">
