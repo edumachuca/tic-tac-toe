@@ -28,35 +28,35 @@ export function Board({ xIsNext, squares, onPlay }) {
 	}
 	return (
 		<Flex justifyContent="center" alignItems="center">
-			<Flex justifyContent="center" alignItems="center" w="20vh" h="10vh">
+			<Flex justifyContent="center" alignItems="center" w="20vh" h="10vh" color="gray.300">
 				{status}
 			</Flex>
 			<SimpleGrid columns={3} width="245px" spacing={1}>
-				<Center onClick={() => handleClick(0)} bg="tomato" width="80px" height="80px" cursor="pointer">
+				<Center onClick={() => handleClick(0)} bg="gray.300" width="80px" height="80px" cursor="pointer">
 					{squares[0]}
 				</Center>
-				<Center onClick={() => handleClick(1)} bg="tomato" width="80px" height="80px" cursor="pointer">
+				<Center onClick={() => handleClick(1)} bg="gray.300" width="80px" height="80px" cursor="pointer">
 					{squares[1]}
 				</Center>
-				<Center onClick={() => handleClick(2)} bg="tomato" width="80px" height="80px" cursor="pointer">
+				<Center onClick={() => handleClick(2)} bg="gray.300" width="80px" height="80px" cursor="pointer">
 					{squares[2]}
 				</Center>
-				<Center onClick={() => handleClick(3)} bg="tomato" width="80px" height="80px" cursor="pointer">
+				<Center onClick={() => handleClick(3)} bg="gray.300" width="80px" height="80px" cursor="pointer">
 					{squares[3]}
 				</Center>
-				<Center onClick={() => handleClick(4)} bg="tomato" width="80px" height="80px" cursor="pointer">
+				<Center onClick={() => handleClick(4)} bg="gray.300" width="80px" height="80px" cursor="pointer">
 					{squares[4]}
 				</Center>
-				<Center onClick={() => handleClick(5)} bg="tomato" width="80px" height="80px" cursor="pointer">
+				<Center onClick={() => handleClick(5)} bg="gray.300" width="80px" height="80px" cursor="pointer">
 					{squares[5]}
 				</Center>
-				<Center onClick={() => handleClick(6)} bg="tomato" width="80px" height="80px" cursor="pointer">
+				<Center onClick={() => handleClick(6)} bg="gray.300" width="80px" height="80px" cursor="pointer">
 					{squares[6]}
 				</Center>
-				<Center onClick={() => handleClick(7)} bg="tomato" width="80px" height="80px" cursor="pointer">
+				<Center onClick={() => handleClick(7)} bg="gray.300" width="80px" height="80px" cursor="pointer">
 					{squares[7]}
 				</Center>
-				<Center onClick={() => handleClick(8)} bg="tomato" width="80px" height="80px" cursor="pointer">
+				<Center onClick={() => handleClick(8)} bg="gray.300" width="80px" height="80px" cursor="pointer">
 					{squares[8]}
 				</Center>
 			</SimpleGrid>
